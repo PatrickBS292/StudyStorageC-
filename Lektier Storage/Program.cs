@@ -6,7 +6,6 @@ XDocument document = XDocument.Load("actors.xml");
 
 foreach (XElement actorElement in document.Descendants("actor"))
 {
-    // read values safely using null-conditional and defaults
     string name = actorElement.Element("name")?.Value;
     string role = actorElement.Element("role")?.Value;
     string yearText = actorElement.Element("year")?.Value;
