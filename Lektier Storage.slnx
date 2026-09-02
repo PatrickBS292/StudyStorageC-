@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Træning/">
+    <Project Path="Dag1/Dag1.csproj" Id="8884bcd0-80de-4fbf-a00a-e8e32d87cf91" />
+  </Folder>
   <Folder Name="/XMLOpgave1/">
     <Project Path="Lektier Storage/Lektier Storage.csproj" />
   </Folder>
