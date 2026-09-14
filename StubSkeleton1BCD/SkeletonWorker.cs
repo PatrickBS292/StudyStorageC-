@@ -11,6 +11,8 @@ namespace Stub_skeleton_1.B_C_D {
         private readonly SkeletonManager manager;
         private readonly Socket connection;
 
+        private readonly PersonService service = new();
+
         private bool stop;
         private Thread thread;
 
@@ -24,21 +26,43 @@ namespace Stub_skeleton_1.B_C_D {
             thread.Start();
         }
 
-        private void Run() {
+        private void Run()
+        {
             Console.WriteLine("SkeletonWorker: New connection from " + connection.RemoteEndPoint);
 
-            try {
+            try
+            {
                 using (NetworkStream stream = new(connection))
-                using (StreamWriter writer = new(stream))
-                using (StreamReader reader = new(stream)) {
+                using (StreamWriter writer = new(stream) { AutoFlush = true })
+                using (StreamReader reader = new(stream))
+                {
 
-                    string xmlLine = reader.ReadLine();
-                    Person person = new();
-                    person = XmlHelper.FromXml(xmlLine);
+                    string methodName = reader.ReadLine();
 
-                    Console.WriteLine(person);
+                    switch (methodName)
+                    {
+                        case "Oldest":
+                            {
+                                Person p1 = XmlHelper.FromXml(reader.ReadLine());
+                                Person p2 = XmlHelper.FromXml(reader.ReadLine());
+
+                                Console.WriteLine($"SkeletonWorker: kalder Oldest({p1}, {p2})");
+
+                                Person result = service.Oldest(p1, p2);
+
+                                writer.WriteLine(XmlHelper.ToXml(result));
+
+                                Console.WriteLine("SkeletonWorker: resultat sendt: " + result);
+                                break;
+                            }
+                        default:
+                            Console.WriteLine("SkeletonWorker: ukendt metode: " + methodName);
+                            break;
+                    }
                 }
-            } catch (IOException) {
+            }
+            catch (IOException)
+            {
 
             }
             manager.Remove(this);

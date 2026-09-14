@@ -5,18 +5,21 @@ namespace Stub_skeleton_1.B_C_D {
 
     public class Program {
 
-        public static void Main() {
+        public static void Main()
+        {
             SkeletonManager manager = new(6010);
             manager.Start();
 
             Console.WriteLine("Skeleton started");
 
-            Person p = new("Jens Jensen", 30);
-            Console.WriteLine("Sending person: " + p);
+            Person p1 = new("Jens Jensen", 30);
+            Person p2 = new("Anna Andersen", 42);
 
             ClientStub stub = new("127.0.0.1", 6010);
-            stub.SendPerson(p);
-            Console.WriteLine("Person send");
+
+            Person oldest = stub.Oldest(p1, p2);
+
+            Console.WriteLine("Ældste person er: " + oldest);
 
             Thread.Sleep(3000);
             manager.Shutdown(false);
