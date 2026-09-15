@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace Stub_skeleton_1.B_C_D
 {
     internal class PersonService

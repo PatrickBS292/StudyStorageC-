@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace Stub_skeleton_1.B_C_D {
     internal class Person {
         public string Name { get; set; }

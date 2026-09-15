@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading;
-
+﻿
 namespace Stub_skeleton_1.B_C_D {
 
     public class Program {
