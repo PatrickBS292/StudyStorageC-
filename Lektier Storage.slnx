@@ -2,12 +2,13 @@
   <Folder Name="/StubSkeleton/">
     <Project Path="StubSkeleton1BCD/StubSkeleton1BCD.csproj" Id="741a98e8-7143-4faf-a46b-4c4d8029309e" />
   </Folder>
-  <Folder Name="/TalsystemerOpg6/">
+  <Folder Name="/TalSystemerOpg/" Id="122a220e-14b3-a2d8-ff47-a6e37effcebb">
     <Project Path="TalSystemerOpg6/TalSystemerOpg6.csproj" Id="84bad6c6-64fd-4f28-bc48-0500e3a78d26" />
   </Folder>
   <Folder Name="/Træning/">
     <Project Path="Dag1/Dag1.csproj" Id="8884bcd0-80de-4fbf-a00a-e8e32d87cf91" />
     <Project Path="Dag2/Dag2.csproj" Id="8a45cf59-f331-4292-bd76-c59a1b6a4d33" />
+    <Project Path="Dag3/Dag3.csproj" Id="2151884a-6295-4fe2-9d90-cb46383503ab" />
   </Folder>
   <Folder Name="/XMLOpgave1/">
     <Project Path="Lektier Storage/XMLOpgaver1.csproj" />
