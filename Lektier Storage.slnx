@@ -9,6 +9,7 @@
     <Project Path="Dag1/Dag1.csproj" Id="8884bcd0-80de-4fbf-a00a-e8e32d87cf91" />
     <Project Path="Dag2/Dag2.csproj" Id="8a45cf59-f331-4292-bd76-c59a1b6a4d33" />
     <Project Path="Dag3/Dag3.csproj" Id="2151884a-6295-4fe2-9d90-cb46383503ab" />
+    <Project Path="Dag4/Dag4.csproj" Id="46212c09-d699-4a8c-89c8-75dcb27c0e99" />
   </Folder>
   <Folder Name="/XMLOpgave1/">
     <Project Path="Lektier Storage/XMLOpgaver1.csproj" />
