@@ -1,0 +1,13 @@
+﻿@model List<StudentManager.Models.Student>
+<h1>Alle Studerende</h1>
+@foreach (var student in Model)
+{
+    <div>
+        <p>Navn: @student.Name</p>
+        <p>Email: @student.Email</p>
+        <p>Uddannelse: @student.Education</p>
+        <p>Semester: @student.Semester</p>
+    </div>
+}
+
+<a href="/Home/CreateStudent">Opret ny studerende</a>
