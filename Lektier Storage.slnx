@@ -2,7 +2,9 @@
   <Folder Name="/ASP.NET-StudentManager/">
     <Project Path="StudentManager/StudentManager.csproj" Id="6466df0b-fe6d-4a46-af19-6429ee652bb1" />
   </Folder>
-  <Folder Name="/Math Games/" />
+  <Folder Name="/Math Games/">
+    <Project Path="MathGame/MathGame.csproj" Id="a42af48b-8ec3-4e5e-8c25-d2e437252d16" />
+  </Folder>
   <Folder Name="/StubSkeleton/">
     <Project Path="StubSkeleton1BCD/StubSkeleton1BCD.csproj" Id="741a98e8-7143-4faf-a46b-4c4d8029309e" />
   </Folder>
