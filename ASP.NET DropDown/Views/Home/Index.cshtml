@@ -1,8 +1,42 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using CalculatorOPG.Models
+@model OperatorsViewModel
+
+@{
+    ViewData["Title"] = "Lommeregner";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mb-4">
+    <h1 class="display-4">Lommeregner</h1>
+</div>
+
+<div class="card shadow-sm mx-auto" style="max-width: 600px;">
+    <div class="card-body p-4">
+        <form asp-controller="Home" asp-action="Index" method="post">
+            <div class="row g-2 align-items-center mb-3">
+                <div class="col">
+                    <input asp-for="OperandOne" class="form-control form-control-lg text-center"
+                           placeholder="Operand 1" type="number" />
+                </div>
+
+                <div class="col-4">
+                    <select asp-for="SelectedOperator" asp-items="Model.Operators"
+                            class="form-select form-select-lg text-center">
+                        <option value="">-- Vælg --</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <input asp-for="OperandTwo" class="form-control form-control-lg text-center"
+                           placeholder="Operand 2" type="number" />
+                </div>
+            </div>
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary btn-lg">=</button>
+            </div>
+
+            <input asp-for="Result" class="form-control form-control-lg text-center fw-bold bg-light"
+                   placeholder="Resultat" readonly />
+        </form>
+    </div>
 </div>
