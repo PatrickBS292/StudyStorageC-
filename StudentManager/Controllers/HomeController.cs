@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using StudentManager.Models;
-
 
 namespace StudentManager.Controllers
 {
@@ -11,6 +9,31 @@ namespace StudentManager.Controllers
         public IActionResult CreateStudent()
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var student = StudentRepository.GetStudentById(id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return View(student);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var student = StudentRepository.GetStudentById(id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return View(student);
         }
 
         [HttpPost]
@@ -23,8 +46,40 @@ namespace StudentManager.Controllers
 
             StudentRepository.AddStudent(student);
 
-            return View("StudentCreated", student);
+            return RedirectToAction("Index");
+
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Student student)
+        {
+        if (!ModelState.IsValid)
+        {
+            return View(student);
+        }
+
+        if (!StudentRepository.UpdateStudent(student))
+        {
+            return NotFound();
+        }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int studentId)
+        {
+            if (!StudentRepository.DeleteStudent(studentId))
+            {
+                return NotFound();
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
 
         public IActionResult ListStudents()
         {

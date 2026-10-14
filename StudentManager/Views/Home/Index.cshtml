@@ -1,4 +1,4 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model List<StudentManager.Models.Student>
 
 <h1>Alle Studerende</h1>
@@ -10,6 +10,7 @@
             <th>Email</th>
             <th>Uddannelse</th>
             <th>Semester</th>
+            <th>Handlinger</th>
         </tr>
     </thead>
 
@@ -21,16 +22,30 @@
                 <td>@student.Email</td>
                 <td>@student.Education</td>
                 <td>@student.Semester</td>
+
+                <td>
+                    <a asp-controller="Home"
+                       asp-action="Edit"
+                       asp-route-id="@student.StudentId"
+                       class="action-button edit-button">
+                        Edit
+                    </a>
+
+                    <a asp-controller="Home"
+                       asp-action="Delete"
+                       asp-route-id="@student.StudentId"
+                       class="action-button delete-button">
+                        Delete
+                    </a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
 
-
-    <a href="/Home/CreateStudent" class="create-button">
-        Opret ny studerende
-    </a>
-
+<a href="/Home/CreateStudent" class="create-button">
+    Opret ny studerende
+</a>
 
 <style>
     .table {
@@ -38,15 +53,15 @@
         border-collapse: collapse;
     }
 
-        .table th, .table td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+    .table th, .table td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-        .table th {
-            background-color: #f2f2f2;
-        }
+    .table th {
+        background-color: #f2f2f2;
+    }
 
     .table-striped tbody tr:nth-of-type(odd) {
         background-color: #f9f9f9;
@@ -62,7 +77,32 @@
         margin-top: 15px;
     }
 
-        .create-button:hover {
-            background-color: #D66529;
-        }
+    .create-button:hover {
+        background-color: #D66529;
+    }
+
+    .action-button {
+        display: inline-block;
+        color: white;
+        padding: 6px 10px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-right: 5px;
+    }
+
+    .edit-button {
+        background-color: #B24A0E;
+    }
+
+    .edit-button:hover {
+        background-color: #D66529;
+    }
+
+    .delete-button {
+        background-color: #777;
+    }
+
+    .delete-button:hover {
+        background-color: #555;
+    }
 </style>

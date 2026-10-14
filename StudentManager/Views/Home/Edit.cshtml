@@ -1,0 +1,42 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model StudentManager.Models.Student
+
+<h1>Rediger studerende</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="StudentId" />
+
+    <div>
+        <label asp-for="Name">Navn</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <div>
+        <label asp-for="Education">Uddannelse</label>
+        <input asp-for="Education" />
+        <span asp-validation-for="Education"></span>
+    </div>
+
+    <div>
+        <label asp-for="Semester">Semester</label>
+        <select asp-for="Semester">
+            <option value="1">1. semester</option>
+            <option value="2">2. semester</option>
+            <option value="3">3. semester</option>
+            <option value="4">4. semester</option>
+            <option value="5">5. semester</option>
+        </select>
+        <span asp-validation-for="Semester"></span>
+    </div>
+
+    <button type="submit">Gem ændringer</button>
+</form>
+
+<a asp-action="Index">Tilbage</a>

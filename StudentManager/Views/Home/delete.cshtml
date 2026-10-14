@@ -1,0 +1,18 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model StudentManager.Models.Student
+
+<h1>Slet studerende</h1>
+
+<p>Er du sikker på, at du vil slette denne studerende?</p>
+
+<p>Navn: @Model.Name</p>
+<p>Email: @Model.Email</p>
+<p>Uddannelse: @Model.Education</p>
+<p>Semester: @Model.Semester</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="StudentId" />
+
+    <button type="submit">Ja, slet</button>
+    <a asp-action="Index">Annuller</a>
+</form>
