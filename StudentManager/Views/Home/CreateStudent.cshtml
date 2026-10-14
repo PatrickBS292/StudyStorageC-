@@ -1,6 +1,11 @@
 ﻿@model StudentManager.Models.Student
 <h1>Opret Studerende</h1>
 <form method="post">
+
+    <div asp-validation-summary="All"
+         class="text-danger">
+    </div>
+
     <div>
         <label>Navn</label>
         <input type="text" name="Name" />
@@ -17,11 +22,19 @@
     </div>
 
     <div>
-        <label>Semester</label>
-        <input type="number" name="Semester" />
+        <label for="Semester">Semester:</label>
+        <select id="Semester" name="Semester">
+            <option value="">Vælg semester</option>
+            <option value="1">1. semester</option>
+            <option value="2">2. semester</option>
+            <option value="3">3. semester</option>
+            <option value="4">4. semester</option>
+            <option value="5">5. semester</option>
+        </select>
     </div>
 
     <button type="submit">Opret</button>
+    <button onclick="window.location.href='/Home/Index'; return false;">Annuller</button>
 </form>
 
 <a href="/Home/Index">Tilbage til oversigt</a>

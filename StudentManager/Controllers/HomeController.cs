@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using StudentManager.Models;
 
 
@@ -15,7 +16,13 @@ namespace StudentManager.Controllers
         [HttpPost]
         public IActionResult CreateStudent(Student student)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(student);
+            }
+
             StudentRepository.AddStudent(student);
+
             return View("StudentCreated", student);
         }
 
@@ -30,6 +37,5 @@ namespace StudentManager.Controllers
             var students = StudentRepository.GetAllStudents();
             return View(students);
         }
-
     }
 }
