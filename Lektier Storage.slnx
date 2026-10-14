@@ -1,9 +1,9 @@
 <Solution>
+  <Folder Name="/ASP.NET - Lommeregner/" Id="b91e2d28-45ea-6cf5-1665-6bc12cf75a9d">
+    <Project Path="ASP.NET DropDown/ASP.NET DropDown.csproj" Id="71f954c9-acb9-4795-97b4-028f064b078f" />
+  </Folder>
   <Folder Name="/ASP.NET-StudentManager/">
     <Project Path="StudentManager/StudentManager.csproj" Id="6466df0b-fe6d-4a46-af19-6429ee652bb1" />
-  </Folder>
-  <Folder Name="/ASPNET DropDown/">
-    <Project Path="ASP.NET DropDown/ASP.NET DropDown.csproj" Id="71f954c9-acb9-4795-97b4-028f064b078f" />
   </Folder>
   <Folder Name="/Math Games/">
     <Project Path="MathGame/MathGame.csproj" Id="a42af48b-8ec3-4e5e-8c25-d2e437252d16" />

@@ -1,0 +1,68 @@
+﻿
+@model List<StudentManager.Models.Student>
+
+<h1>Alle Studerende</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Navn</th>
+            <th>Email</th>
+            <th>Uddannelse</th>
+            <th>Semester</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>@student.Education</td>
+                <td>@student.Semester</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+    <a href="/Home/CreateStudent" class="create-button">
+        Opret ny studerende
+    </a>
+
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .create-button {
+        display: inline-block;
+        background-color: #B24A0E;
+        color: white;
+        padding: 10px 16px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+    }
+
+        .create-button:hover {
+            background-color: #D66529;
+        }
+</style>

@@ -24,5 +24,12 @@ namespace StudentManager.Controllers
             var students = StudentRepository.GetAllStudents();
             return View(students);
         }
+
+        public IActionResult Index()
+        {
+            var students = StudentRepository.GetAllStudents();
+            return View(students);
+        }
+
     }
 }
