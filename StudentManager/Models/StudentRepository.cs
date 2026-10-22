@@ -1,36 +1,28 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace StudentManager.Models
-{
-    public class StudentRepository
-    {
-        private static List<Student> students = new List<Student>();
-        private static int nextId = 1;
+namespace StudentManager.Models {
+    public class StudentRepository : IStudentRepository {
+        private readonly List<Student> students = new List<Student>();
+        private int nextId = 1;
 
-        public static void AddStudent(Student student)
-        {
+        public void AddStudent(Student student) {
             student.StudentId = nextId++;
             students.Add(student);
         }
 
-        public static List<Student> GetAllStudents()
-        {
+        public List<Student> GetAllStudents() {
             return students;
         }
 
-        public static Student? GetStudentById(int id)
-        {
+        public Student? GetStudentById(int id) {
             return students.FirstOrDefault(s => s.StudentId == id);
         }
 
-        public static bool UpdateStudent(Student updatedStudent)
-        {
+        public bool UpdateStudent(Student updatedStudent) {
             var student = GetStudentById(updatedStudent.StudentId);
 
-            if (student == null)
-            {
+            if (student == null) {
                 return false;
             }
 
@@ -42,12 +34,10 @@ namespace StudentManager.Models
             return true;
         }
 
-        public static bool DeleteStudent(int id)
-        {
+        public bool DeleteStudent(int id) {
             var student = GetStudentById(id);
 
-            if (student == null)
-            {
+            if (student == null) {
                 return false;
             }
 

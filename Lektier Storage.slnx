@@ -3,6 +3,7 @@
     <Project Path="ASP.NET DropDown/ASP.NET DropDown.csproj" Id="71f954c9-acb9-4795-97b4-028f064b078f" />
   </Folder>
   <Folder Name="/ASP.NET-StudentManager/">
+    <Project Path="StudentManager.Tests/StudentManager.Tests.csproj" Id="3b8185d2-7cc5-418a-9fa3-e84e39ad985e" />
     <Project Path="StudentManager/StudentManager.csproj" Id="6466df0b-fe6d-4a46-af19-6429ee652bb1" />
   </Folder>
   <Folder Name="/Math Games/">

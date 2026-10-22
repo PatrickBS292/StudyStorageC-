@@ -7,4 +7,8 @@
     <RootNamespace>ASP.NET_DropDown</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.21.0" />
+  </ItemGroup>
+
 </Project>
