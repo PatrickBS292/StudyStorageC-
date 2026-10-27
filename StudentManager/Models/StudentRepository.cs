@@ -1,26 +1,29 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.EntityFrameworkCore;
+using StudentManager.Data;
 
 namespace StudentManager.Models {
     public class StudentRepository : IStudentRepository {
-        private readonly List<Student> students = new List<Student>();
-        private int nextId = 1;
+        private readonly AppDbContext _context;
+
+        public StudentRepository(AppDbContext context) {
+            _context = context;
+        }
 
         public void AddStudent(Student student) {
-            student.StudentId = nextId++;
-            students.Add(student);
+            _context.Student.Add(student);
+            _context.SaveChanges();
         }
 
         public List<Student> GetAllStudents() {
-            return students;
+            return _context.Student.AsNoTracking().ToList();
         }
 
         public Student? GetStudentById(int id) {
-            return students.FirstOrDefault(s => s.StudentId == id);
+            return _context.Student.AsNoTracking().FirstOrDefault(s => s.StudentId == id);
         }
 
         public bool UpdateStudent(Student updatedStudent) {
-            var student = GetStudentById(updatedStudent.StudentId);
+            var student = _context.Student.Find(updatedStudent.StudentId);
 
             if (student == null) {
                 return false;
@@ -31,17 +34,19 @@ namespace StudentManager.Models {
             student.Education = updatedStudent.Education;
             student.Semester = updatedStudent.Semester;
 
+            _context.SaveChanges();
             return true;
         }
 
         public bool DeleteStudent(int id) {
-            var student = GetStudentById(id);
+            var student = _context.Student.Find(id);
 
             if (student == null) {
                 return false;
             }
 
-            students.Remove(student);
+            _context.Student.Remove(student);
+            _context.SaveChanges();
             return true;
         }
     }
