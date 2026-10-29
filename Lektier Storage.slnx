@@ -15,6 +15,9 @@
   <Folder Name="/TalSystemerOpg/" Id="122a220e-14b3-a2d8-ff47-a6e37effcebb">
     <Project Path="TalSystemerOpg6/TalSystemerOpg6.csproj" Id="84bad6c6-64fd-4f28-bc48-0500e3a78d26" />
   </Folder>
+  <Folder Name="/TrafficLight/">
+    <Project Path="TrafficLight/TrafficLight.csproj" Id="30c4b3d1-0d6b-4031-97ba-025f37f5fa39" />
+  </Folder>
   <Folder Name="/Træning/">
     <Project Path="Dag1/Dag1.csproj" Id="8884bcd0-80de-4fbf-a00a-e8e32d87cf91" />
     <Project Path="Dag2/Dag2.csproj" Id="8a45cf59-f331-4292-bd76-c59a1b6a4d33" />
